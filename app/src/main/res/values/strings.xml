@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Trabalho04-2018-1</string>
     <string name="veiculo">Veículo</string>
+    <string name="min">Min</string>
+    <string name="modelo">Modelo</string>
+    <string name="max">Max</string>
+    <string name="valor">Valor</string>
+    <string name="ano">Ano</string>
+    <string name="procurar">procurar</string>
+    <string name="mostrar">Mostrar</string>
     <string-array name="veiculos_array">
         <item>Carro</item>
         <item>Moto</item>
