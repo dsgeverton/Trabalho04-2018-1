@@ -15,11 +15,13 @@ import br.edu.iff.pooa.trabalho04_2018_1.service.ClickRecyclerViewListener;
 
 public class MarcaAdapter extends RecyclerView.Adapter{
 
+    private int vehicle;
     private List<Marca> marcas;
     private Context context;
     private ClickRecyclerViewListener clickRecyclerViewListener;
 
-    public MarcaAdapter(List<Marca> marcas, Context context, ClickRecyclerViewListener clickRecyclerViewListener) {
+    public MarcaAdapter(int vehicle, List<Marca> marcas, Context context, ClickRecyclerViewListener clickRecyclerViewListener) {
+        this.vehicle = vehicle;
         this.marcas = marcas;
         this.context = context;
         this.clickRecyclerViewListener = clickRecyclerViewListener;
@@ -38,7 +40,12 @@ public class MarcaAdapter extends RecyclerView.Adapter{
         MarcaAdapter.MecanicoViewHolder mViewHolder = (MarcaAdapter.MecanicoViewHolder) holder;
         Marca marca = marcas.get(position);
         mViewHolder.nomeMarca.setText(marca.getNome());
-       // mViewHolder.imagemMarca.setBaseline(1);
+        if (vehicle == 0 )
+            mViewHolder.imagemMarca.setImageResource(R.drawable.car_icon);
+        if (vehicle == 1)
+            mViewHolder.imagemMarca.setImageResource(R.drawable.motorcycle_icon);
+        if (vehicle == 2)
+            mViewHolder.imagemMarca.setImageResource(R.drawable.truck_icon);
     }
 
     @Override
@@ -48,11 +55,11 @@ public class MarcaAdapter extends RecyclerView.Adapter{
 
     private class MecanicoViewHolder extends RecyclerView.ViewHolder {
         private final TextView nomeMarca;
-//        private final ImageView imagemMarca;
+        private final ImageView imagemMarca;
         private MecanicoViewHolder(View itemView) {
             super(itemView);
             nomeMarca = itemView.findViewById(R.id.tvMarca);
-//            imagemMarca = itemView.findViewById(R.id.ivMarca);
+            imagemMarca = itemView.findViewById(R.id.ivMarca);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
