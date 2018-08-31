@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Trabalho04-2018-1</string>
+    <string name="veiculo">Veículo</string>
+    <string-array name="veiculos_array">
+        <item>Carro</item>
+        <item>Moto</item>
+        <item>Caminhão</item>
+    </string-array>
 </resources>
