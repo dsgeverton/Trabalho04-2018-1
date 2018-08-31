@@ -1,6 +1,7 @@
 package br.edu.iff.pooa.trabalho04_2018_1.view;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -96,7 +97,10 @@ public class MainActivity extends AppCompatActivity implements ClickRecyclerView
 
     @Override
     public void onClick(Object object) {
-
+        Marca marca = (Marca) object;
+        Intent intent = new Intent(MainActivity.this, FilterActivity.class);
+        intent.putExtra("id", marca.getCodigo());
+        startActivity(intent);
     }
 }
 
