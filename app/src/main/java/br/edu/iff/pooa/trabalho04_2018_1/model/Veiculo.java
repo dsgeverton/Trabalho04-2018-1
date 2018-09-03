@@ -5,7 +5,7 @@ public class Veiculo {
     private String Valor;
     private String Marca;
     private String Modelo;
-    private long AnoModelo;
+    private int AnoModelo;
     private String Combustivel;
     private String CodigoFipe;
     private String MesReferencia;
@@ -40,7 +40,7 @@ public class Veiculo {
         return AnoModelo;
     }
 
-    public void setAnoModelo(long anoModelo) {
+    public void setAnoModelo(int anoModelo) {
         AnoModelo = anoModelo;
     }
 

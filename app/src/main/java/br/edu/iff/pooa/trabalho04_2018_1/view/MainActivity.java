@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements ClickRecyclerView
     RecyclerView mRecyclerView;
     Call<List<Marca>> call;
     List<Marca> marcas;
+    public static String veiculo;
     private ProgressDialog dialog;
 
     @Override
@@ -50,17 +51,16 @@ public class MainActivity extends AppCompatActivity implements ClickRecyclerView
             @Override
             public void onItemSelected(final AdapterView<?> adapterView, View view, final int i, long l) {
                 dialog.show();
-                String marca = null;
                 switch (i){
-                    case 0: marca = "carros";
+                    case 0: veiculo = "carros";
                             break;
-                    case 1: marca = "motos";
+                    case 1: veiculo = "motos";
                             break;
-                    case 2: marca = "caminhoes";
+                    case 2: veiculo = "caminhoes";
                             break;
                 }
-                if (marca != null){
-                    call = new FipeRetroFit().getFipeService().buscarMarcas(marca);
+                if (veiculo != null){
+                    call = new FipeRetroFit().getFipeService().buscarMarcas(veiculo);
                     call.enqueue(new Callback<List<Marca>>() {
                         @Override
                         public void onResponse(Call<List<Marca>> call, Response<List<Marca>> response) {
